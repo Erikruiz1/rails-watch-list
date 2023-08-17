@@ -1,0 +1,12 @@
+
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment, label: "comment" %>
+  <%= f.association :movie, label: "movie" %>
+
+  <div class="actions">
+    <%= f.button :submit, "New Bookmark" %>
+  </div>
+<% end %>
+
+<%= link_to "List", list_path(@list) %>
