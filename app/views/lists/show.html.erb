@@ -1,18 +1,19 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @list.photo.key, height: 300, width: 400, crop: :fill %>)">
   <div class="container">
     <h1>List <strong><%= @list.name %>!</strong></h1>
+
     <%= link_to 'Add Bookmark', new_list_bookmark_path(@list), class: "btn btn-ghost" %>
   </div>
 </div>
 <div class="container">
-  <div class="justify-content-evenly ">
+  <div class="">
     <div>
       <h2>Bookmarks:</h2>
       <div class="d-flex">
         <% @list.bookmarks.each do |bookmark| %>
             <div class="card-trip">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+              <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" /> %>
               <div class="card-trip-infos">
                 <div>
                   <h2><%= bookmark.movie.title %></h2>
