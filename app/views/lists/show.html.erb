@@ -1,19 +1,43 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>List <strong><%= @list.name %>!</strong></h1>
+    <%= link_to 'Add Bookmark', new_list_bookmark_path(@list), class: "btn btn-ghost" %>
+  </div>
+</div>
 <div class="container">
-  <div class="d-flex flex-column align-items-center">
-      <h1><%= @list.name %></h1>
-      <%= link_to 'Add Bookmark', new_list_bookmark_path(@list), class: "link-button" %>
-    <div class="d-flex flex-column align-items-center">
+  <div class="justify-content-evenly ">
+    <div>
       <h2>Bookmarks:</h2>
-      <ul>
+      <div class="d-flex">
         <% @list.bookmarks.each do |bookmark| %>
-          <li class="p-1">
-            <%= bookmark.movie.title %>
-          </li>
-            <%= bookmark.comment %>
-          </li>
+            <div class="card-trip">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= bookmark.movie.title %></h2>
+                  <p><%= bookmark.comment %></p>
+                </div>
+              </div>
+            </div>
         <% end %>
-      </ul>
-      <%= link_to 'Back', lists_path, class: "link-edit" %>
+      </div>
     </div>
+  </div>
+</div>
+<div class="container">
+      <%= link_to 'Back', lists_path, class: "btn btn-ghost" %>
+</div>
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
   </div>
 </div>

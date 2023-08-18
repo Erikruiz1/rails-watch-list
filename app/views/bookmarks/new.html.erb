@@ -1,12 +1,24 @@
 
+<div class="container">
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment, label: "comment" %>
+    <%= f.association :movie, label: "movie" %>
+      <%= f.button :submit, "New Bookmark" %>
+  <% end %>
 
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment, label: "comment" %>
-  <%= f.association :movie, label: "movie" %>
+  <%= link_to "List", list_path(@list), class: "btn btn-ghost" %>
 
-  <div class="actions">
-    <%= f.button :submit, "New Bookmark" %>
+
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+    </div>
   </div>
-<% end %>
 
-<%= link_to "List", list_path(@list) %>
+</div>
